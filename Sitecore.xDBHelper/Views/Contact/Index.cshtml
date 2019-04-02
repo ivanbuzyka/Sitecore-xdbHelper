@@ -1,0 +1,50 @@
+﻿@model Sitecore.xDBHelper.Models.ContactData
+
+@{
+    ViewBag.Title = "title";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>Contact</legend>
+            <div>
+                @Html.LabelFor(model => model.FirstName)
+            </div>
+            <div>@Html.TextBoxFor(model => model.FirstName)</div>
+
+            <div>
+                @Html.LabelFor(model => model.LastName)
+            </div>
+            <div>@Html.TextBoxFor(model => model.LastName)</div>
+
+            <div>
+                @Html.LabelFor(model => model.Gender)
+            </div>
+            <div>@Html.TextBoxFor(model => model.Gender)</div>
+
+            <div>
+                @Html.LabelFor(model => model.Birthday)
+            </div>
+            <div>@Html.TextBoxFor(model => model.Birthday)</div>
+
+            <div>
+                @Html.LabelFor(model => model.Identificator)
+            </div>
+            <div>@Html.TextBoxFor(model => model.Identificator)</div>
+
+            <input type="submit" value="Update contact data" />
+            <input type="button" value="End tracking and Abandon session" onclick="location.href='@Url.Action("Abandon", "Contact")'" />
+        </fieldset>
+    }
+</body>
+</html>
